@@ -1,0 +1,17 @@
+# Archivos compilados de Maven
+backend/target/
+
+# Credenciales reales (nunca se sube, solo el .template)
+backend/src/main/resources/application.properties
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.iml
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

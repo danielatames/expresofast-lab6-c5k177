@@ -23,13 +23,13 @@ manejo centralizado de excepciones y bitácora de auditoría.
 
 1. Conectate a tu instancia de SQL Server con SSMS.
 2. Creá la base de datos:
-```sql
+
    CREATE DATABASE ExpresoFast[TU_CARNET]_II2026;
-```
+
 3. Ejecutá los scripts en este orden exacto:
-   - `database/01_schema_lab5.sql` — crea las tablas del dominio logístico (EmpresaLogistica, Vehiculo, Conductor, Envio)
-   - `database/02_schema_lab6_extension.sql` — crea las tablas de usuarios, roles y bitácora (Usuario, Rol, UsuarioRol, BitacoraEnvio)
-   - `database/03_data_seeds.sql` — inserta los roles base y los usuarios de prueba
+   - database/01_schema_lab5.sql` — crea las tablas del dominio logístico (EmpresaLogistica, Vehiculo, Conductor, Envio)
+   - database/02_schema_lab6_extension.sql` — crea las tablas de usuarios, roles y bitácora (Usuario, Rol, UsuarioRol, BitacoraEnvio)
+   - database/03_data_seeds.sql` — inserta los roles base y los usuarios de prueba
 
 ### Insertar usuarios con contraseñas encriptadas
 
@@ -52,23 +52,22 @@ Las contraseñas nunca se guardan en texto plano — se almacenan como un hash B
 
 ### Backend
 
-1. Copiá `backend/application.properties.template` a `backend/src/main/resources/application.properties`.
+1. Copiá backend/application.properties.template a backend/src/main/resources/application.properties.
 2. Completá tus credenciales reales de SQL Server y una clave JWT propia (mínimo 32 caracteres).
 3. Desde la carpeta `backend/`, ejecutá: .\mvnw.cmd spring-boot:run
 4. El backend queda disponible en `http://localhost:8080`.
 
 ### Frontend
 
-1. Abrí `frontend/login.html` directamente en el navegador (doble clic sobre el archivo).
+1. Abrí frontend/login.html directamente en el navegador (doble clic sobre el archivo).
 2. Iniciá sesión con cualquiera de las credenciales de prueba de la tabla anterior.
-3. Serás redirigido automáticamente a `index.html`, el tablero principal, con la interfaz adaptada según tu rol.
+3. Serás redirigido automáticamente a index.html, el tablero principal, con la interfaz adaptada según tu rol.
 
 ## Documentación de la API
 
-La colección de Postman con todos los endpoints está en `docs/ExpresoFast_Postman_Collection.json`.
-Importala en Postman (Import → File) para probar los endpoints con ejemplos de headers y bodies ya preparados.
+La colección de Postman con todos los endpoints está en docs/ExpresoFast_Postman_Collection.json.
 
-## Matriz de Roles
+## Roles
 
 | Endpoint | Método | Roles permitidos |
 |---|---|---|

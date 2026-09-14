@@ -27,7 +27,7 @@ manejo centralizado de excepciones y bitácora de auditoría.
    CREATE DATABASE ExpresoFast[TU_CARNET]_II2026;
 
 3. Ejecutá los scripts en este orden exacto:
-   - database/01_schema_lab5.sql` — crea las tablas del dominio logístico (EmpresaLogistica, Vehiculo, Conductor, Envio)
+   - database/01_schema_lab5.sql — crea las tablas del dominio logístico (EmpresaLogistica, Vehiculo, Conductor, Envio)
    - database/02_schema_lab6_extension.sql — crea las tablas de usuarios, roles y bitácora (Usuario, Rol, UsuarioRol, BitacoraEnvio)
    - database/03_data_seeds.sql— inserta los roles base y los usuarios de prueba
 

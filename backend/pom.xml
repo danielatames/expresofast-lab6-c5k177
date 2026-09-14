@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>4.1.1</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/> 
 	</parent>
 	<groupId>cr.ac.ucr.paraiso.ie.c5k177</groupId>
 	<artifactId>expresofast</artifactId>
@@ -27,7 +27,7 @@
 		<url/>
 	</scm>
 	<properties>
-    <java.version>21</java.version>
+    <java.version>25</java.version>
 </properties>
 	<dependencies>
     <dependency>

@@ -266,6 +266,10 @@ body {
     z-index: 100;
 }
 
+.modal-overlay[hidden] {
+    display: none;
+}
+
 .modal-contenido {
     background: white;
     border-radius: 12px;

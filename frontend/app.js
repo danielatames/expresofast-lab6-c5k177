@@ -189,8 +189,8 @@ function filtrarBitacoraPorFecha() {
     renderizarBitacora(filtrada);
 }
 
-//eventos
 
+//eventos
 document.getElementById('form-envio').addEventListener('submit', (evento) => {
     evento.preventDefault();
 
@@ -235,3 +235,15 @@ if (document.getElementById('tablero-envios')) {
         cargarEnvios();
     }
 }
+
+document.addEventListener('keydown', (evento) => {
+    if (evento.key === 'Escape') {
+        document.getElementById('modal-bitacora').hidden = true;
+    }
+});
+
+document.getElementById('modal-bitacora').addEventListener('click', (evento) => {
+    if (evento.target.id === 'modal-bitacora') {
+        document.getElementById('modal-bitacora').hidden = true;
+    }
+});

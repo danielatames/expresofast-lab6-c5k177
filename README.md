@@ -28,16 +28,16 @@ manejo centralizado de excepciones y bitácora de auditoría.
 
 3. Ejecutá los scripts en este orden exacto:
    - database/01_schema_lab5.sql` — crea las tablas del dominio logístico (EmpresaLogistica, Vehiculo, Conductor, Envio)
-   - database/02_schema_lab6_extension.sql` — crea las tablas de usuarios, roles y bitácora (Usuario, Rol, UsuarioRol, BitacoraEnvio)
-   - database/03_data_seeds.sql` — inserta los roles base y los usuarios de prueba
+   - database/02_schema_lab6_extension.sql — crea las tablas de usuarios, roles y bitácora (Usuario, Rol, UsuarioRol, BitacoraEnvio)
+   - database/03_data_seeds.sql— inserta los roles base y los usuarios de prueba
 
 ### Insertar usuarios con contraseñas encriptadas
 
 Las contraseñas nunca se guardan en texto plano — se almacenan como un hash BCrypt en la columna `password_hash`. Para generar un hash válido:
 
-1. En el backend, ejecutá la clase auxiliar `HashGenerator.java` (ubicada temporalmente en el paquete raíz durante el desarrollo), que usa `BCryptPasswordEncoder` para imprimir el hash de una contraseña dada.
+1. En el backend, ejecutá la clase auxiliar HashGenerator.java (ubicada temporalmente en el paquete raíz durante el desarrollo), que usa BCryptPasswordEncoder para imprimir el hash de una contraseña dada.
 2. Copiá el hash impreso en consola.
-3. Reemplazá el placeholder correspondiente (`PEGA_AQUI_HASH_DE_...`) en `database/03_data_seeds.sql` con el hash real.
+3. Reemplazá el placeholder correspondiente (`PEGA_AQUI_HASH_DE_...`) en database/03_data_seeds.sql con el hash real.
 4. Ejecutá el script actualizado en SSMS.
 
 ## Usuarios de Prueba
@@ -67,13 +67,4 @@ Las contraseñas nunca se guardan en texto plano — se almacenan como un hash B
 
 La colección de Postman con todos los endpoints está en docs/ExpresoFast_Postman_Collection.json.
 
-## Roles
 
-| Endpoint | Método | Roles permitidos |
-|---|---|---|
-| `/api/auth/login` | POST | Público |
-| `/api/envios/optimizados` | GET | ADMIN, OPERADOR, CONDUCTOR |
-| `/api/envios` | POST | ADMIN, OPERADOR |
-| `/api/envios/{id}/estado` | PATCH | ADMIN, CONDUCTOR |
-| `/api/envios/{id}/bitacora` | GET | ADMIN, OPERADOR |
-| `/api/vehiculos/**` | ALL | ADMIN |

@@ -30,7 +30,6 @@ public class AuthService {
     }
 
     public AuthResponseDTO login(AuthRequestDTO request) {
-      
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
         );
@@ -39,6 +38,7 @@ public class AuthService {
 
         List<String> roles = authentication.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
+                .filter(rol -> rol.startsWith("ROLE_"))
                 .collect(Collectors.toList());
 
         usuarioRepository.findByUsername(request.getUsername())
